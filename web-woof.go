@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"sync"
 	"fmt"
+	"time"
 )
 
 // Add comma separated your website's urls
@@ -37,5 +38,11 @@ func printStatus() {
 }
 
 func main() {
-	printStatus()
+	// be careful to not DDoS your pages
+	const SleepTime = time.Second * 60
+
+	for {
+		printStatus()
+		time.Sleep(SleepTime)
+	}
 }
