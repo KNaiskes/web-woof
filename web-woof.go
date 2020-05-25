@@ -6,7 +6,11 @@ import (
 	"fmt"
 )
 
+// Add comma separated your website's urls
+// Note even the last one in the list must include a comma in the end
 var urls = []string {
+	// "https://www.example.com",
+	// "https://www.example2.com",
 }
 
 func getStatus(url string, wg *sync.WaitGroup) (string, error) {
