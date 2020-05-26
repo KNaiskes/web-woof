@@ -28,6 +28,8 @@ func getStatus(url string, wg *sync.WaitGroup) (string, error) {
 }
 
 func printStatus() {
+	timeNow := time.Now().Format("15:04:05")
+	fmt.Printf("---------------%s---------------\n", timeNow)
 	var wg sync.WaitGroup
 
 	for _, url := range urls {
